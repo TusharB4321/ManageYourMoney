@@ -12,14 +12,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.manageyourmoney.databinding.ActivityMainBinding
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.values
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
+    private lateinit var database:FirebaseDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        database=FirebaseDatabase.getInstance()
+        database.getReference("fada").child("aa").setValue("adad")
         navigateFragment()
     }
     private fun navigateFragment() {

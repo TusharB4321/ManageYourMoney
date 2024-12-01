@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483193009068",
+    "project_id": "manage-your-money-75fde",
+    "storage_bucket": "manage-your-money-75fde.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483193009068:android:d157e1ad3c7c1eb2720009",
+        "android_client_info": {
+          "package_name": "com.example.manageyourmoney"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFOE9DHri6q0zEpL_h3rGKnk3yw8K9aHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
