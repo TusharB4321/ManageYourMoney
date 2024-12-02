@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.example.manageyourmoney.R
 import com.example.manageyourmoney.databinding.FragmentSignInBinding
 import com.example.manageyourmoney.repository.AuthRepository
 import com.example.manageyourmoney.utils.Resources
@@ -57,6 +59,7 @@ class SignInFragment : Fragment() {
                 }
                 is Resources.Success->{
                     binding.progressBar.visibility=View.GONE
+                    findNavController().navigate(R.id.action_signInFragment_to_homeFragment2)
                     Toast.makeText(context, resources.data, Toast.LENGTH_SHORT).show()
                 }
                 is Resources.Error->{
