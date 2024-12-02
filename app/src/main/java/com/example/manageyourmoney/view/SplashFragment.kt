@@ -23,6 +23,9 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnOnBoardingLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_splashFragment_to_signInFragment)
+        }
+        binding.btnOnBoardingSignup.setOnClickListener {
             findNavController().navigate(R.id.action_splashFragment_to_signUpFragment)
         }
 

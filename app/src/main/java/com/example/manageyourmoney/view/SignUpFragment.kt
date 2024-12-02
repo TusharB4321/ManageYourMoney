@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import com.example.manageyourmoney.databinding.FragmentSignUpBinding
 import com.example.manageyourmoney.repository.AuthRepository
 import com.example.manageyourmoney.utils.Resources
-import com.example.manageyourmoney.viewmodels.SignUpViewModelFactory
-import com.example.manageyourmoney.viewmodels.SignUpViewmodel
+import com.example.manageyourmoney.viewmodels.UserViewModelFactory
+import com.example.manageyourmoney.viewmodels.UserViewmodel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -20,8 +20,8 @@ class SignUpFragment : Fragment() {
 
     private lateinit var binding:FragmentSignUpBinding
     private lateinit var authRepository: AuthRepository
-    private val viewmodel:SignUpViewmodel by viewModels{
-        SignUpViewModelFactory(authRepository)
+    private val viewmodel:UserViewmodel by viewModels{
+        UserViewModelFactory(authRepository)
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +46,6 @@ class SignUpFragment : Fragment() {
         }
 
         viewmodel.signupStatus.observe(viewLifecycleOwner, Observer { resources->
-
             when(resources){
                 is Resources.Loading->{
                     binding.progressBar.visibility=View.VISIBLE

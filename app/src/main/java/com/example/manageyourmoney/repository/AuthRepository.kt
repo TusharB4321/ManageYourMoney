@@ -40,4 +40,19 @@ class AuthRepository(
                 }
         }
     }
+
+    fun signInUser(email:String,password: String,callback: (Resources<String>) -> Unit){
+
+        if (Constant.isEmailValid(email,callback)&&Constant.isPasswordValid(password,callback))
+        {
+           auth.signInWithEmailAndPassword(email,password)
+               .addOnCompleteListener {task->
+                   if (task.isSuccessful){
+                       callback(Resources.Success("Sign In Successfully"))
+                   }else{
+                       callback(Resources.Error(task.exception?.localizedMessage ?: "Sign-In Failed"))
+                   }
+               }
+        }
+        }
 }
